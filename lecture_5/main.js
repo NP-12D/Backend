@@ -1,5 +1,5 @@
 //1. დაწერე ფუნქცია , რომელიც არგუმენტად იღებს sec-ს და ითვლის უკუსვლით იქმადე სანამ 0-მდე არ მივა
-console.log("1) ითვლის უკუსვლით იქმადე სანამ 0-მდე არ მივა")
+console.log("1) ითვლის უკუსვლით იქმადე სანამ 0-მდე არ მივა");
 function Timer(sec) {
   let interval = setInterval(() => {
     console.log(sec);
@@ -13,21 +13,33 @@ function Timer(sec) {
 Timer(10);
 
 //2. დაწერე ფუქნცია ფუქნციას გადააწოდე რიცხვი  და ასევე ლოგე რენდომული რიცხვი იქამდე სანამ ეს გადაცემული და რენდომ რიცხვი არ. დაემთხვევა ერთმამენთს
-console.log("2) ლოგე რენდომული რიცხვი იქამდე სანამ ეს გადაცემული და რენდომ რიცხვი არ. დაემთხვევა ერთმამენთს ")
+console.log(
+  "2) ლოგე რენდომული რიცხვი იქამდე სანამ ეს გადაცემული და რენდომ რიცხვი არ. დაემთხვევა ერთმამენთს ",
+);
+function equalwhiel(num) {
+  if (num < 0 || num > 100) return;
+  let random = Math.floor(Math.random() * 101);
+  while (random !== num) {
+    console.log(random);
+    random = Math.floor(Math.random() * 101);
+  }
+  console.log(random, num);
+}
+equalwhiel(10);
 function equal(num) {
-
   let random;
   let randomInterval = setInterval(() => {
     random = Math.floor(Math.random() * 101);
     console.log(random);
     if (random === num) {
       clearInterval(randomInterval);
+      console.log(random, num);
     }
   }, 1000);
 }
-
+equal(12);
 //3.და წერე ფუქნცია რომელიც მიიღებს n და callback-ს როცა n > 27-ზე გაუშვი ეს callback-ი რომელიც დააკონსოლებს რომ ეს ნამდვილად მეტია 27-ზე სხვა შემთხვევაში დააკონსოლე რომ n ნაკლებია
-console.log("3)მეტია თუ არა 27-ზე")
+console.log("3)მეტია თუ არა 27-ზე");
 function greaterOrLessThan27(n, callback) {
   if (n > 27) {
     callback();
@@ -35,10 +47,13 @@ function greaterOrLessThan27(n, callback) {
     console.log(`${n} ნაკლებია 27-ზე`);
   }
 }
-greaterOrLessThan27(30, () => console.log("მეტია 27-ზე"));
+function callback() {
+  console.log("მეტია 27-ზე");
+}
+greaterOrLessThan27(30, callback);
 
 //4.დაწერე ფუქნცია რომელიც პარამეტრად მიიღებს API და დააბრუნებს ამ API-ში მყოფ  4 - users. https://jsonplaceholder.typicode.com/users დაწერე ორივენაირად than/catch & async/await
- console.log("4) than/catch & async/await");
+console.log("4) than/catch & async/await");
 async function getData(API) {
   try {
     let res = await fetch(API);
@@ -63,7 +78,9 @@ function getDataThen(API) {
 getDataThen("https://jsonplaceholder.typicode.com/users");
 
 //5) დააწყვილე reduce-თი ცალკე ვისი ასაკიც მეტია 10 ზე და ვისი ასაკიც ნაკლებია 20
-console.log("5)დააწყვილე reduce-თი ცალკე ვისი ასაკიც მეტია 10 ზე და ვისი ასაკიც ნაკლებია 20")
+console.log(
+  "5)დააწყვილე reduce-თი ცალკე ვისი ასაკიც მეტია 10 ზე და ვისი ასაკიც ნაკლებია 20",
+);
 let people = [
   { name: "Giorgi", age: 25 },
   { name: "Nika", age: 15 },
@@ -86,18 +103,22 @@ let grouped = people.reduce(
 console.log("მეტია 10-ზე:", grouped.more10);
 console.log(grouped.les20);
 //6. დაწერე ფუნქცია რომელიც მიიღებს ორ რიცხვს და callback-ს. თუ პირველი მეტია მეორეზე გაუშვი callback და დაუბეჭდე "მეტია", სხვა შემთხვევაში "ნაკლები ან ტოლია".
-console.log("6)დაწერე ფუნქცია რომელიც მიიღებს ორ რიცხვს და callback-ს")
+console.log("6)დაწერე ფუნქცია რომელიც მიიღებს ორ რიცხვს და callback-ს");
 function moreThan(n1, n2, callback) {
   if (n1 > n2) {
-    callback();
-    console.log("მეტია");
+    callback(n1, n2);
   } else {
     console.log("ნაკლები ან ტოლია");
   }
 }
+moreThan(15, 10, (n1, n2) => {
+  console.log(`${n1} მეტია ${n2}-ზე`);
+});
 
 //7.დაწერე reduce, რომელიც დააჯგუფებს - ცალკე 20-ზე მეტ ფასიან რიცხვებს და ცალკე 20-ზე ნაკლები ან ტოლი ფასიანი ნივთები
-console.log("დაწერე reduce, რომელიც დააჯგუფებს - ცალკე 20-ზე მეტ ფასიან რიცხვებს და ცალკე 20-ზე ნაკლები ან ტოლი ფასიანი ნივთები");
+console.log(
+  "დაწერე reduce, რომელიც დააჯგუფებს - ცალკე 20-ზე მეტ ფასიან რიცხვებს და ცალკე 20-ზე ნაკლები ან ტოლი ფასიანი ნივთები",
+);
 let products = [
   { name: "Mouse", price: 15 },
   { name: "Keyboard", price: 45 },
