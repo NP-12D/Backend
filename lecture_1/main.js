@@ -19,7 +19,7 @@ console.log(
 //4)
 console.log("4) გამოიყენე for ლუპი 1-დან 100-მდე რიცხვებზე.");
 for (let i = 1; i <= 100; i++) {
-  if (i % 3 == 0 && i % 5 == 0) {
+  if (i % 3 === 0 && i % 5 === 0) {
     console.log("FooBar");
   } else if (i % 3 == 0) {
     console.log("Foo");
