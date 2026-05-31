@@ -66,12 +66,12 @@ class CryptoWallet {
     this.history = [];
   }
   deposit(amount) {
-    this.history.push(`Deposited ${amount}`);
+    this.history.push(`Deposited ${amount}: date ${new Date().toLocaleString('en-GB')}`);
     return (this.balance += amount);
   }
   withdraw(amount) {
     if (this.balance >= amount) {
-      this.history.push(`Witdrew ${amount}`);
+      this.history.push(`Witdrew ${amount}: date ${new Date().toLocaleString('en-GB')}`);
       return (this.balance -= amount);
     } else {
       return "Insufficient funds";
@@ -81,8 +81,8 @@ class CryptoWallet {
     if (this.balance >= amount) {
       this.balance -= amount;
       otherWallet.balance += amount;
-      this.history.push(`Transferred ${amount} to other wallet`);
-      otherWallet.history.push(`Received ${amount}`);
+      this.history.push(`Transferred ${amount} to other wallet: date ${new Date().toLocaleString('en-GB')}`);
+      otherWallet.history.push(`Received ${amount}: date ${new Date().toLocaleString('en-GB')}`);
     } else {
       return "Insufficient funds";
     }
@@ -108,27 +108,33 @@ class Wishlist {
     this.arr = [];
   }
   addItem(item) {
-    this.arr.push(item);
+    let lastId=this.arr[this.arr.length - 1]?.id || 0
+       let newObj = {
+            id:lastId  + 1,
+            ...item
+         }
+      this.arr.push(newObj);
+   
   }
   deleteItem(id) {
     this.arr = this.arr.filter((item) => item.id !== id);
   }
   updateItem(id, item) {
     let index = this.arr.findIndex((item) => item.id === id);
-    if (index !== -1) this.arr[index] = item;
+    if (index !== -1) this.arr[index]={ id: id, ...item };
   }
 }
 let wishlist = new Wishlist();
-wishlist.addItem({ id: 0, category: "Table", name: "Uplift v2", price: 1700 });
+wishlist.addItem({category: "Table", name: "Uplift v2", price: 1700 });
 console.log(wishlist.arr);
-wishlist.updateItem(0, {
-  id: 0,
+wishlist.updateItem(1,{
+    id:1,
   category: "Table",
   name: "Uplift V3",
   price: 2000,
 });
 console.log(wishlist.arr);
-wishlist.deleteItem(0);
+wishlist.deleteItem(1);
 console.log(wishlist.arr);
 
 //5)შექმენი Freelancer (ფრილანსერი) კლასი მეთოდით calculateEarnings(),
