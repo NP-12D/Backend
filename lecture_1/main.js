@@ -63,7 +63,7 @@ console.log(`5) ${replacedText}`);
 */
 /*
    5)ჩამოთვალე რა მეთოდები ვისწავლეთ მაგ -> length(პასუხი თეორიულად გაეცი)
-    განვიხილეთ შემდეგი მეთოდები: length, toUpperCase, toLowerCase, trim, includes,charAt(), replace, split.
+    განვიხილეთ შემდეგი მეთოდები: length, toUpperCase, toLowerCase, trim, includes,charAt(), replace, split,slice,concat.
     length მეთოდი გვიბრუნებს სიგრძეს.
     toUpperCase მეთოდს სტრინგის ყველა ასო გადაყავს UpperCase-ში .
     toLowerCase მეთოდს სტრინგის ყველა ასო გადაყავს LowerCase-ში .
