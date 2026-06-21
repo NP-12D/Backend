@@ -1,0 +1,21 @@
+{
+  "dependencies": {
+    "axios": "^1.18.0",
+    "commander": "^15.0.0"
+  },
+    "bin":{
+    "phone-cli":"main.js"
+  },
+  "name": "lecture_13",
+  "version": "1.0.0",
+  "description": "",
+  "main": "main.js",
+  "devDependencies": {},
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "type": "commonjs"
+}
