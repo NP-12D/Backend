@@ -1,0 +1,26 @@
+[
+  {
+    "id": 3,
+    "name": "Milk",
+    "description": "Fresh milk",
+    "date": "2026-06-20",
+    "category": "Dairy",
+    "isExpired": true
+  },
+  {
+    "id": 4,
+    "name": "Milk",
+    "description": "Fresh milk",
+    "date": "2026-06-20",
+    "category": "Dairy",
+    "isExpired": true
+  },
+  {
+    "id": 5,
+    "name": "Apple",
+    "description": "Fresh milk",
+    "date": "2026-06-20",
+    "category": "Dairy",
+    "isExpired": true
+  }
+]
