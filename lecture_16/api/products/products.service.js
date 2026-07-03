@@ -38,7 +38,7 @@ export const addProd = (req, res) => {
       data: null,
     });
   }
-  if (+price > 200) {
+  if (price > 200) {
     return res.status(400).json({
       message: "price must be < 200",
       data: null,
@@ -73,13 +73,13 @@ export const updateProd = (req, res) => {
     return res.status(404).json({ message: "id is invalid", data: null });
   }
   const { name, price, category, isExpire } = req.body;
-  if (!name ||!price) {
+  if (!name) {
     return res.status(400).json({
-      message: "price and name are  required fields",
+      message: "name is required ",
       data: null,
     });
   }
-  if (+price > 200) {
+  if (price > 200) {
     return res.status(400).json({
       message: "price must be < 200",
       data: null,
@@ -88,7 +88,7 @@ export const updateProd = (req, res) => {
   products[index] = {
     ...products[index],
     name: name,
-    price: price,
+    price: price ?? products[index].price,
     category: category || products[index].category,
     isExpire: isExpire ?? products[index].isExpire,
   };
