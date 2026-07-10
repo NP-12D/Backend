@@ -1,0 +1,24 @@
+{
+  "name": "lecture_18",
+  "version": "1.0.0",
+  "description": "",
+  "main": "dist/main.js",
+ "bin":{
+    "nameAge-cli":"main.js"
+  },
+  "scripts": {
+    "start": "node --watch dist/main.js",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+
+  
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "type": "module",
+  "dependencies": {
+    "commander": "^15.0.0",
+    "express": "^5.2.1",
+    "mongoose": "^9.7.4"
+  }
+}
